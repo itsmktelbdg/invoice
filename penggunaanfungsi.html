@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belajar Objek Javascript - Fungsi Konstruktor</title>
+
+    <script>
+        // 1. Fungsi Konstruktor Mobil (dengan parameter)
+        function Car(brand, model, color) {
+            // properti
+            this.brand = brand;
+            this.model = model;
+            this.color = color;
+
+            // method yang mengembalikan nilai (return)
+            this.fullInfo = function() {
+                return this.brand + " " + this.model + " (" + this.color + ")";
+            }
+
+            // method untuk menampilkan info ke dokumen web
+            this.showCar = function() {
+                document.write("Info Mobil: " + this.fullInfo() + "<br>");
+            }
+        }
+
+        // Membuat objek nyata dari fungsi konstruktor Car dengan parameter
+        var car1 = new Car("Toyota", "Avanza", "Hitam");
+        var car2 = new Car("Honda", "Civic", "Putih");
+
+        // Menjalankan method objek
+        car1.showCar();
+        car2.showCar();
+    </script>
+</head>
+<body>
+</body>
+</html>
